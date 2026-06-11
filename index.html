@@ -17,16 +17,19 @@
 
 <body class="bg-background text-slate-300 font-sans min-h-screen flex flex-col antialiased">
 
-    <header class="w-full max-w-7xl mx-auto px-6 py-6 flex justify-between items-center relative z-50">
+   <!-- Este contenedor padre se encarga de fijar el menú, darle el fondo oscuro y flotar sobre el contenido -->
+<div class="sticky top-0 z-50 w-full bg-[#0f172a]/70 backdrop-blur-md border-b border-slate-800 shadow-lg">
+    
+    <header class="w-full max-w-7xl mx-auto px-6 py-5 flex justify-between items-center relative">
         <div class="flex items-center gap-3 text-white font-bold text-xl">
             <div class="bg-primary/20 text-primary p-1.5 rounded-md">
-                <i class="fa-solid fa-terminal text-sm"></i>
+                <i class="fa-solid fa-code text-sm"></i>
             </div>
             Fran Rebollo
         </div>
 
         <nav class="hidden md:flex gap-8 text-sm font-medium text-slate-400">
-            <a href="#" class="hover:text-white transition">Inicio</a>
+            <a href="#main" class="hover:text-white transition">Inicio</a>
             <a href="#proyectos" class="hover:text-white transition">Proyectos</a>
             <a href="#habilidades" class="hover:text-white transition">Habilidades</a>
             <a href="#sobre-mi" class="hover:text-white transition">Sobre mí</a>
@@ -37,33 +40,33 @@
             class="btn-contactar hidden md:block bg-primary hover:bg-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition">
             Contactar
         </a>
-        <button id="btn-menu" class="md:hidden text-slate-400 hover:text-white transition text-2xl">
+        
+        <button id="btn-menu" class="md:hidden text-slate-400 hover:text-white transition text-2xl relative">
             <i class="fa-solid fa-bars"></i>
+        </button> <!-- Cerramos correctamente la etiqueta del botón aquí -->
 
-
-            <div id="menu-movil"
-                class="hidden absolute top-[85px] left-0 w-full bg-surface/95 backdrop-blur-md border-b border-slate-700/50 shadow-2xl flex-col items-center gap-6 py-8 md:hidden">
-                <a href="#" class="text-lg font-medium text-slate-300 hover:text-white transition">Inicio</a>
-                <a href="#proyectos"
-                    class="text-lg font-medium text-slate-300 hover:text-white transition">Proyectos</a>
-                <a href="#habilidades"
-                    class="text-lg font-medium text-slate-300 hover:text-white transition">Habilidades</a>
-                <a href="#sobre-mi" class="text-lg font-medium text-slate-300 hover:text-white transition">Sobre mí</a>
-                <a href="#contacto" class="text-lg font-medium text-slate-300 hover:text-white transition">Contacto</a>
-                <a href="#contacto"
-                    class="btn-contactar w-11/12 max-w-[300px] mt-4 bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-xl font-medium transition">
-                    Contactar
-                </a>
-            </div>
+        <!-- Menú móvil corregido: ahora se posiciona respecto al contenedor fijado -->
+        <div id="menu-movil"
+            class="hidden absolute top-full left-0 w-full bg-surface/95 backdrop-blur-md border-b border-slate-700/50 shadow-2xl flex-col items-center gap-6 py-8 md:hidden">
+            <a href="#main" class="text-lg font-medium text-slate-300 hover:text-white transition">Inicio</a>
+            <a href="#proyectos" class="text-lg font-medium text-slate-300 hover:text-white transition">Proyectos</a>
+            <a href="#habilidades" class="text-lg font-medium text-slate-300 hover:text-white transition">Habilidades</a>
+            <a href="#sobre-mi" class="text-lg font-medium text-slate-300 hover:text-white transition">Sobre mí</a>
+            <a href="#contacto" class="text-lg font-medium text-slate-300 hover:text-white transition">Contacto</a>
+            <a href="#contacto"
+                class="btn-contactar text-center w-11/12 max-w-[300px] mt-4 bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-xl font-medium transition">
+                Contactar
+            </a>
+        </div>
     </header>
+</div>
 
 
 
 
     <!-- ESTE ES EL MAIN -->
 
-    <main
-        class="flex-grow w-full max-w-7xl mx-auto px-6 py-12 md:py-20 flex flex-col lg:flex-row items-center justify-between gap-16">
+    <main id="main" class="flex-grow w-full max-w-7xl mx-auto px-6 py-12 md:py-20 flex flex-col lg:flex-row items-center justify-between gap-16">
 
         <div class="w-full lg:w-1/2 flex flex-col items-start gap-6">
             <div
